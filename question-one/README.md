@@ -14,6 +14,10 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
+## Demo
+<!-- target blank -->
+[Click here to see the demo](https://productmanagementappkanggo.netlify.app/)
+
 ## Requirements
 Node 20 or higher
 
@@ -35,6 +39,4 @@ npm run dev
 npm run build
 ```
 
-## Demo
 
-[Demo](https://productmanagementappkanggo.netlify.app/)
