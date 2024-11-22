@@ -30,8 +30,10 @@ const openEditModal = (id) => {
 }
 
 const idDelete = ref("");
-const deleteProduct = (productId) => {
+const nameDelete = ref("");
+const deleteProduct = (productId, productName) => {
     idDelete.value = productId;
+    nameDelete.value = productName;
     openConfirmationModal();
 }
 
@@ -59,28 +61,34 @@ const deleteProductConfirmation = () => {
 </script>
 
 <template>
-    <div class="grid lg:grid-cols-3 gap-5">
+    <div v-if="productStore.products.length > 0" class="grid gap-5 lg:grid-cols-3">
         <div v-for="product in productStore.products" :key="product.id">
-            <div class="card bg-base-100 shadow-xl ">
+            <div class="shadow-xl card bg-base-100 ">
                 <figure class="md:h-[300px] w-full">
                     <img v-if="product.image" :src="product.image" alt="Shoes"
-                        class="rounded-xl object-cover w-full hover:scale-105 transition" />
+                        class="object-cover w-full transition rounded-xl hover:scale-105" />
                     <img v-else src="https://via.placeholder.com/800" alt="Shoes" />
                 </figure>
-                <div class="card-body -mt-5">
-                    <div class="flex justify-between align-middle content-center">
-                        <h2 class="card-title my-auto">{{ truncateText(product.name, 20) }}</h2>
+                <div class="-mt-5 card-body">
+                    <div class="flex content-center justify-between align-middle">
+                        <h2 class="my-auto card-title">{{ truncateText(product.name, 20) }}</h2>
                         <div>
-                            <p class="font-extrabold text-2xl">{{ currency(product.price) }}</p>
+                            <p class="text-2xl font-extrabold text-primary">{{ currency(product.price) }}</p>
                         </div>
                     </div>
                     <p>{{ truncateText(product.description, 100) }}</p>
                     <div class="card-actions">
                         <button @click="openEditModal(product.id)" class="btn btn-primary">Edit</button>
-                        <button @click="deleteProduct(product.id)" class="btn btn-error text-white">Hapus</button>
+                        <button @click="deleteProduct(product.id, product.name)"
+                            class="text-white btn btn-error">Hapus</button>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div v-else>
+        <div class="flex items-center justify-center">
+            <p class="mt-10 text-2xl">Tidak ada produk</p>
         </div>
     </div>
 
@@ -91,23 +99,25 @@ const deleteProductConfirmation = () => {
                 <TransitionChild enter="transition ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100"
                     leave="transition ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
 
-                    <DialogDescription class="bg-white p-6 rounded-xl shadow-xl w-full max-w-xl">
+                    <DialogDescription class="w-full max-w-xl p-6 bg-white shadow-xl rounded-xl">
                         <div class="flex">
-                            <DialogTitle class="flex-grow text-xl font-bold my-auto">
+                            <DialogTitle class="flex-grow my-auto text-xl font-bold">
                                 Hapus Produk
                             </DialogTitle>
                             <button type="button" @click="closeConfirmationModal" class="btn btn-ghost">
-                                <XMarkIcon class="h-5 w-5" />
+                                <XMarkIcon class="w-5 h-5" />
                             </button>
                         </div>
 
                         <hr>
 
-                        <h3 class="text-lg font-bold my-5">Apakah kamu yakin akan menghapus produk ini?</h3>
+                        <h3 class="my-5 text-lg">Apakah kamu yakin akan menghapus produk <span class="font-bold">{{
+                            nameDelete }}</span>?
+                        </h3>
 
-                        <div class="flex gap-3 mt-4 justify-end">
+                        <div class="flex justify-end gap-3 mt-4">
                             <button @click="closeConfirmationModal" class="btn btn-primary">No</button>
-                            <button @click="deleteProductConfirmation" class="btn btn-error text-white">Yes</button>
+                            <button @click="deleteProductConfirmation" class="text-white btn btn-error">Yes</button>
                         </div>
                     </DialogDescription>
                 </TransitionChild>
