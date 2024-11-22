@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Sepatu",
+    "price": 100000,
+    "description": "Sepatu ini sangat nyaman digunakan, cocok untuk berbagai kegiatan",
+    "image": "https://i0.wp.com/www.footstepfootwear.com/wp-content/uploads/2020/03/Soho-Black-Serong.jpg?fit=1400%2C1400&ssl=1"
+  },
+  {
+    "id": 2,
+    "name": "Baju",
+    "price": 50000,
+    "description": "Baju ini sangat nyaman digunakan, cocok untuk berbagai kegiatan",
+    "image": "https://contents.mediadecathlon.com/p2157319/k$45a8143f29ae498e05be9c1588d95135/kaos-running-dry-fit-baju-lari-pria-breathable-hitam-decathlon-8488034.jpg?f=1920x0&format=auto"
+  },
+  {
+    "id": 3,
+    "name": "Celana",
+    "price": 75000,
+    "description": "Celana ini sangat nyaman digunakan, cocok untuk berbagai kegiatan",
+    "image": "https://hikenrun.com/cdn/shop/products/A1_8456cb28-c3d2-425d-a4a9-5487d0307369.png?v=1677666734"
+  },
+  {
+    "id": 4,
+    "name": "Topi",
+    "price": 25000,
+    "description": "Topi ini sangat nyaman digunakan, cocok untuk berbagai kegiatan",
+    "image": "https://contents.mediadecathlon.com/p2713902/k$00da948f14bf0cfa45873f421d3dce00/topi-tennis-58-cm-tc-500-putih-artengo-8505882.jpg?f=1920x0&format=auto"
+  },
+  {
+    "id": 5,
+    "name": "Kacamata",
+    "price": 30000,
+    "description": "Kacamata ini sangat nyaman digunakan, cocok untuk berbagai kegiatan",
+    "image": "https://contents.mediadecathlon.com/p2579563/k$d496d5c0a803f765fe444f737e74aea9/kacamata-hiking-dewasa-kategori-3-mh140-quechua-8559262.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Jam Tangan",
+    "price": 200000,
+    "description": "Jam tangan ini sangat nyaman digunakan, cocok untuk berbagai kegiatan",
+    "image": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//104/MTA-62595167/no-brand_glo-relogio-jam-tangan-kasual-pria-milanese-stainless-steel-3294-warna-hitam-_full01.jpg"
+  }
+]
