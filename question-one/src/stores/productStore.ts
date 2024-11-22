@@ -20,7 +20,7 @@ export const useProductStore = defineStore("products", () => {
   products.value = data;
 
   const addProduct = (product: Product) => {
-    products.value.push(product);
+    products.value = [product, ...products.value];
   };
 
   const editProduct = (product: Product) => {
