@@ -34,3 +34,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Demo
+
+[Demo](https://productmanagementappkanggo.netlify.app/)
