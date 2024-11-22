@@ -23,4 +23,7 @@ BASE_URL = 'http://localhost:8000/'
 Buka project dengan host yang kamu pakai
 example :
 http://question-two.test/
+<<<<<<< HEAD
 http://localhost:8000/
+=======
+>>>>>>> de18b39f2f8e90cfdf7927388422d054abb1e1ec
